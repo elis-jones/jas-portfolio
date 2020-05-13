@@ -1,5 +1,4 @@
 import React from "react"
-import Header from "../components/Header"
 import { Link } from "gatsby"
 import Layout from "../components/Layout"
 import styled from "styled-components"

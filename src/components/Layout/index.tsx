@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
 import "../../../static/fonts/fonts.css"
+import { Helmet } from "react-helmet"
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -31,6 +32,12 @@ const StyledLayout = styled.div`
 const Layout: React.FC = ({ children }) => {
   return (
     <StyledLayout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Jasmine Jones</title>
+        <meta name="description" content="Portfolio, Statement, and Stuff..." />
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <GlobalStyles />
       <header>
         <Link to="/">
