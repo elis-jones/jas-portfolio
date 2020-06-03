@@ -32,7 +32,7 @@ const pages = [
 
 const Home: React.FC = () => {
   return (
-    <Layout>
+    <Layout background="../../img/home.png">
       <StyledList>
         {pages.map(page => (
           <StyledLink key={`home_li_${page.name}`} to={page.path}>
