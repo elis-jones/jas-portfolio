@@ -21,11 +21,15 @@ const StyledLayout = styled.div<{ bg?: string }>`
   header {
     display: flex;
     justify-content: center;
+    padding: 20px;
 
     a {
       text-shadow: none;
       background-image: none;
-      margin: 20px;
+
+      img {
+        max-width: 100%;
+      }
     }
   }
 

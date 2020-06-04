@@ -30,6 +30,12 @@ export default () => (
             2017 - current - BA Fine Art: Painting - Camberwell College of Art
             <br />
             2016 - Art & Design Foundation Diploma - Coleg Sir Gar <br />
+            <br />
+            <br />
+            CONTACT <br />
+            @jasminellywela <br />
+            <br />
+            jasminellywela@gmail.com
           </div>
         </div>
         <div className="column small">
