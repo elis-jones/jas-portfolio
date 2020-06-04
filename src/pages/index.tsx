@@ -3,13 +3,13 @@ import { Link } from "gatsby"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 
-const StyledList = styled.div`
+export const StyledList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `
 
-const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)`
   display: flex;
   color: black;
   text-decoration: none;
