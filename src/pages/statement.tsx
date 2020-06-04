@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 
-const StyledArtistStatement = styled.div`
+export const StyledArtistStatement = styled.div`
   .header {
     padding-left: 20px;
     text-transform: uppercase;
