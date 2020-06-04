@@ -11,7 +11,8 @@ export const StyledArtistStatement = styled.div`
   }
 
   .content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
     max-width: 1100px;
 
     .statement {
@@ -24,10 +25,10 @@ export const StyledArtistStatement = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 20px;
 
       img {
-        margin: 15px;
-        max-width: 350px;
+        max-width: 100%;
       }
     }
 
@@ -36,7 +37,7 @@ export const StyledArtistStatement = styled.div`
     }
 
     @media (max-width: 900px) {
-      flex-direction: column;
+      grid-template-columns: 1fr;
     }
   }
 `
@@ -85,7 +86,7 @@ export default () => (
             our face – they are our face’ – Timothy Morton
           </div>
         </div>
-        <div className="column small">
+        <div className="column img-column">
           <div className="image-container">
             <img src="../../img/artist-statement-image.png" alt="" />
           </div>
