@@ -53,7 +53,7 @@ export const StyledClayPage = styled.div<{ col?: number }>`
   }
 `
 
-const ModalContent = styled.div<{ col?: number; bg?: string }>`
+export const ModalContent = styled.div<{ col?: number; bg?: string }>`
   display: grid;
   justify-items: center;
   align-items: center;
@@ -85,7 +85,7 @@ const ModalContent = styled.div<{ col?: number; bg?: string }>`
   }
 `
 
-const Item = styled.div<{ bg?: string }>`
+export const Item = styled.div<{ bg?: string }>`
   padding: 20px;
   background: ${({ bg }) => (bg ? bg : "rgba(214, 216, 221, 0.39)")};
   img {
