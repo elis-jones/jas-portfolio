@@ -105,7 +105,7 @@ const drawings = [
 ]
 
 export default () => {
-  const [isModalOpen, setIsModalOpen] = useState(true)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [tab, setTab] = useState(1)
   const closeModal = () => setIsModalOpen(false)
 
