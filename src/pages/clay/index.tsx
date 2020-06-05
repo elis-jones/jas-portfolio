@@ -53,8 +53,108 @@ export const StyledClayPage = styled.div<{ col?: number }>`
   }
 `
 
+const ModalContent = styled.div<{ col?: number; bg?: string }>`
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  color: #123861;
+  grid-gap: 20px;
+  height: 100%;
+  grid-template-columns: repeat(${({ col }) => (col ? col : 3)}, 1fr);
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+
+  .text {
+    text-align: center;
+    line-height: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .img {
+    padding: 20px;
+    background: rgba(214, 216, 221, 0.39);
+    img {
+      max-width: 100%;
+    }
+  }
+`
+
+const Item = styled.div<{ bg?: string }>`
+  padding: 20px;
+  background: ${({ bg }) => (bg ? bg : "rgba(214, 216, 221, 0.39)")};
+  img {
+    max-width: 100%;
+  }
+`
+
+const HoldingAsYouMove = () => (
+  <ModalContent>
+    <div className="item text">
+      <h3 className="subheader">‘Holding as you move’</h3>
+      <p className="content">
+        Temporal piece
+        <br />
+        Mixed media; New Quay local clay, steel, palm leaves, string, and cotton{" "}
+        <br />
+        2020
+      </p>
+    </div>
+    <div className="item img">
+      <img src="../../../img/clay/holdingasyoumove-1.png" alt="" />
+    </div>
+    <div className="item img">
+      <img src="../../../img/clay/holdingasyoumove-2.png" alt="" />
+    </div>
+  </ModalContent>
+)
+
+const NewQuayClay = () => (
+  <ModalContent col={2}>
+    <div className="item text">
+      <h3 className="subheader">Local coastal ceramics</h3>
+      <p className="content">
+        New Quay, Wales
+        <br />
+        Purple glaze on New Quay clay
+        <br />
+        2020
+      </p>
+    </div>
+    <div className="item img">
+      <img src="../../../img/clay/newquayclay-1.png" alt="" />
+    </div>
+  </ModalContent>
+)
+
+const Sanctuary = () => (
+  <ModalContent>
+    <div className="item text">
+      <h3 className="subheader">Local coastal ceramics</h3>
+      <p className="content">
+        New Quay, Wales
+        <br />
+        Purple glaze on New Quay clay
+        <br />
+        2020
+      </p>
+    </div>
+    {[1, 2, 3, 4, 5, 6].map(i => (
+      <Item bg="none">
+        <img src={`../../../img/clay/sanctuary-${i}.png`} alt="" />
+      </Item>
+    ))}
+  </ModalContent>
+)
+
 export default () => {
-  const [isModalOpen, setIsModalOpen] = useState(true)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [tab, setTab] = useState(1)
 
   const closeModal = () => setIsModalOpen(false)
 
@@ -81,11 +181,15 @@ export default () => {
                 <img
                   src={`../../../img/clay/clay-index-${i}.png`}
                   key={`clay-image-${i}`}
+                  onClick={() => {
+                    setTab(i)
+                    setIsModalOpen(true)
+                  }}
                 />
               ))}
             </div>
             <p className="info">
-              How to collect, clean and use your own local clay{" "}
+              How to collect, clean and use your own local clay
             </p>
           </div>
         </section>
@@ -94,7 +198,9 @@ export default () => {
           onRequestClose={closeModal}
           ariaHideApp={false}
         >
-          modal
+          {tab === 1 && <HoldingAsYouMove />}
+          {tab === 2 && <NewQuayClay />}
+          {tab === 3 && <Sanctuary />}
         </Modal>
       </StyledClayPage>
     </Layout>
