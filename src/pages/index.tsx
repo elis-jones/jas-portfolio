@@ -13,13 +13,13 @@ export const StyledLink = styled(Link)`
   display: flex;
   color: black;
   text-decoration: none;
-  background: rgba(227, 227, 227, 0.56);
+  background: rgba(227, 227, 227, 0.76);
   justify-content: center;
   margin: 10px;
-  padding: 5px;
+  padding: 10px;
   width: 300px;
-  font-size: 12px;
-  height: 25px;
+  font-size: 18px;
+  /* height: 25px; */
   box-sizing: border-box;
   align-items: center;
 `

@@ -21,7 +21,7 @@ const Drawing = ({ subHeader, index, children }) => (
 
 const drawings = [
   {
-    subHeader: "'Untitled",
+    subHeader: "'Untitled'",
     text: (
       <>
         Watercolour pencil and ink
@@ -31,7 +31,7 @@ const drawings = [
     ),
   },
   {
-    subHeader: "'Untitled",
+    subHeader: "'Untitled'",
     text: (
       <>
         Watercolour pencil and ink
@@ -41,7 +41,7 @@ const drawings = [
     ),
   },
   {
-    subHeader: "'Untitled",
+    subHeader: "'Untitled'",
     text: (
       <>
         Charcoal and Pastel
@@ -51,7 +51,7 @@ const drawings = [
     ),
   },
   {
-    subHeader: "'Membrane",
+    subHeader: "'Membrane'",
     text: (
       <>
         Charcoal
@@ -61,7 +61,7 @@ const drawings = [
     ),
   },
   {
-    subHeader: "'Untitled",
+    subHeader: "'Untitled'",
     text: (
       <>
         Pencil
@@ -71,7 +71,7 @@ const drawings = [
     ),
   },
   {
-    subHeader: "'Untitled",
+    subHeader: "'Untitled'",
     text: (
       <>
         Acrylic on canvas <br />
@@ -81,7 +81,7 @@ const drawings = [
     ),
   },
   {
-    subHeader: "'Free Float",
+    subHeader: "'Free Float'",
     text: (
       <>
         Acrylic on canvas <br />

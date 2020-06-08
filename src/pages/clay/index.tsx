@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import Layout from "../../components/Layout"
 import styled, { css } from "styled-components"
 import Modal from "react-modal"
+import ReactPlayer from "react-player"
 
 export const StyledClayPage = styled.div<{ col?: number }>`
   max-width: 1100px;
@@ -45,6 +46,7 @@ export const StyledClayPage = styled.div<{ col?: number }>`
       img {
         justify-self: center;
         max-width: 100%;
+        cursor: pointer;
       }
     }
     .info {
@@ -70,6 +72,14 @@ export const ModalContent = styled.div<{ col?: number; bg?: string }>`
     grid-template-columns: 1fr;
   }
 
+  .full-width {
+    grid-column: span 2;
+  }
+
+  .padded {
+    padding: 40px 0px;
+  }
+
   .text {
     text-align: center;
     line-height: 2rem;
@@ -88,10 +98,139 @@ export const ModalContent = styled.div<{ col?: number; bg?: string }>`
 export const Item = styled.div<{ bg?: string }>`
   padding: 20px;
   background: ${({ bg }) => (bg ? bg : "rgba(214, 216, 221, 0.39)")};
+
   img {
     max-width: 100%;
   }
 `
+
+export const Video = styled.div`
+  position: relative;
+  width: 600px;
+  max-width: 100%;
+  height: 100%;
+
+  @media (max-width: 900px) {
+    width: 400px;
+  }
+
+  @media (max-width: 530px) {
+    width: 300px;
+  }
+
+  @media (max-width: 440px) {
+    width: 200px;
+  }
+`
+
+const Horizon = () => (
+  <ModalContent col={2}>
+    <div className="item text padded">
+      <h3 className="subheader">'Horizon'</h3>
+      <p className="content ">26min 47sec film</p>
+    </div>
+    <Video>
+      <ReactPlayer
+        className="player"
+        playing
+        url="https://vimeo.com/413289123"
+        width="100%"
+        height="100%"
+      />
+    </Video>
+  </ModalContent>
+)
+
+const Drip = () => (
+  <ModalContent col={2}>
+    <div className="item text padded">
+      <h3 className="subheader">'Drip'</h3>
+      <p className="content ">17min 55sec film </p>
+    </div>
+    <Video>
+      <ReactPlayer
+        className="player"
+        playing
+        url="https://vimeo.com/413297053"
+        width="100%"
+        height="100%"
+      />
+    </Video>
+  </ModalContent>
+)
+
+const ClayFilm = () => (
+  <ModalContent col={2}>
+    <div className="item text padded">
+      <h3 className="subheader">'Clay'</h3>
+      <p className="content ">
+        1min 30sec film
+        <br />
+        <br />
+        In collaboration with Hattie Morrison, Leia Morrison and Isabelle
+        Willis.
+        <br />
+        <br />
+        videography by Leia Morrison
+      </p>
+    </div>
+    <Video>
+      <ReactPlayer
+        className="player"
+        playing
+        url="https://vimeo.com/390519798"
+        width="100%"
+        height="100%"
+      />
+    </Video>
+    <p className="content full-width">
+      Wet sand and rock, watching the clock of the tide—
+      <br />
+      <br />
+      long and slow and rolling. Beginning of the waves.
+      <br />
+      <br />
+      A soft shell, outer layer cracking of clay. <br />
+      <br />
+      We mend holes with small shoals of dust sized fish and rusting days—
+      <br />
+      <br />
+      squeezed, pressed <br />
+      <br />
+      then washed away.
+      <br />
+      <br />
+      Crazed ships sunken and drunken dunked sailors. Elastic, plastic packets,
+      powerless batteries, barred car bonnets, cigarettes, dead pop stars, tar.
+      Thousands, hundreds, tens of bits and pieces blended into clay. The whole
+      past passing through hands and then
+      <br />
+      <br />
+      washed away
+      <br />
+      <br />
+      wash e
+      d&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;w&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;y{" "}
+      <br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s{" "}
+      <br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h&nbsp;&nbsp;&nbsp;&nbsp;i
+      <br />
+      <br />
+      n<br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;w{" "}
+      <br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y{" "}
+      <br />
+      <br />
+      Poetry by Hattie Morrison <br />
+    </p>
+  </ModalContent>
+)
 
 const HoldingAsYouMove = () => (
   <ModalContent>
@@ -198,9 +337,12 @@ export default () => {
           onRequestClose={closeModal}
           ariaHideApp={false}
         >
-          {tab === 1 && <HoldingAsYouMove />}
-          {tab === 2 && <NewQuayClay />}
+          {tab === 1 && <ClayFilm />}
+          {tab === 2 && <Horizon />}
           {tab === 3 && <Sanctuary />}
+          {tab === 4 && <Drip />}
+          {tab === 5 && <HoldingAsYouMove />}
+          {tab === 6 && <NewQuayClay />}
         </Modal>
       </StyledClayPage>
     </Layout>
