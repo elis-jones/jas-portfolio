@@ -276,11 +276,11 @@ const Sanctuary = () => (
     <div className="item text">
       <h3 className="subheader">Local coastal ceramics</h3>
       <p className="content">
-        New Quay, Wales
-        <br />
-        Purple glaze on New Quay clay
+        New Quay local clay
         <br />
         2020
+        <br />
+        <br />A series of hand-sized pieces of local clay, moulded and burnished
       </p>
     </div>
     {[1, 2, 3, 4, 5, 6].map(i => (
@@ -327,9 +327,6 @@ export default () => {
                 />
               ))}
             </div>
-            <p className="info">
-              How to collect, clean and use your own local clay
-            </p>
           </div>
         </section>
         <Modal

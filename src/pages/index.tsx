@@ -19,7 +19,6 @@ export const StyledLink = styled(Link)`
   padding: 10px;
   width: 300px;
   font-size: 18px;
-  /* height: 25px; */
   box-sizing: border-box;
   align-items: center;
 `
