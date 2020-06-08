@@ -23,6 +23,7 @@
     "gatsby-plugin-typography": "^2.5.1",
     "gatsby-source-filesystem": "^2.3.3",
     "react": "^16.12.0",
+    "react-burger-menu": "^2.6.15",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "react-modal": "^3.11.2",
