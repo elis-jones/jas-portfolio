@@ -73,7 +73,7 @@ export const ModalContent = styled.div<{ col?: number; bg?: string }>`
   }
 
   .full-width {
-    grid-column: span 2;
+    grid-column: 1/-1;
   }
 
   .padded {
